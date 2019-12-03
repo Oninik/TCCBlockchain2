@@ -3,7 +3,7 @@
 class Votante {
 
   constructor(cpf, rg, nome) {
-    if (this.validateVoter(cpf)) {
+    if (this.validarVotante(!cpf)) {
         this.cpf = cpf;
         this.rg = rg;
         this.nome = nome;
@@ -15,20 +15,20 @@ class Votante {
             delete this.name;
         }
         return this;
-    } else if (!this.validateVoter(cpf)){
-      throw new Error('the cpf is not valid.');
+    } else if (!this.validarVotante(cpf)){
+      throw new Error('O cpf já está registrado');
     }
   }
   /**
    *
-   * validateVoter
+   * validarVotante
    *
    * check for valid ID card - stateID or drivers License.
    *  
    * @param cpf - an array of choices 
    * @returns - yes if valid Voter, no if invalid
    */
-  async validateVoter(cpf) {
+  async validarVotante(cpf) {
     //cpf error checking here, i.e. check if valid drivers License, or state ID
     if (cpf) {
       return true;
@@ -38,4 +38,4 @@ class Votante {
   }
 
 }
-module.exports = Voter;
+module.exports = Votante;
