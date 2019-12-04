@@ -7,7 +7,7 @@
 const { FileSystemWallet, Gateway } = require('fabric-network');
 const path = require('path');
 
-const ccpPath = path.resolve(__dirname, '..', '..', 'first-network', 'connection-org1.json');
+const ccpPath = path.resolve(__dirname, '..', '..', '..', '..', 'first-network', 'connection-org1.json');
 
 exports.createVotacao = async (nome, opcoes, participantes, startDate, endDate) => {
     try {
