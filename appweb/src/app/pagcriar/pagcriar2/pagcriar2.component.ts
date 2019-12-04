@@ -38,7 +38,7 @@ export class Pagcriar2Component implements OnInit {
       }, err => {
         console.log(err);
       }
-    );
+    ); 
 
   }
 }

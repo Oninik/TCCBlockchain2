@@ -19,4 +19,9 @@ export class VotacaoService {
     let url = environment.apiBaseURL + '/read?nomeVotacao=' + nome;
     return this.http.get(url);
   }
+
+  public Votar(voto): Observable<any> {
+    let url = environment.apiBaseURL + '/votar';
+    return this.http.post(url,voto);
+  }
 }
