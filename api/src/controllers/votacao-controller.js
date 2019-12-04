@@ -100,7 +100,7 @@ exports.alterarDataIni = (req, res) => {};
 exports.Votar = (req, res) => {
     
     let body = req.body;
-    console.log("Eae deu certo");
+    console.log("Eae deu certo?");
 
     votacaoNet.Votar(body.nome, body.cpf, body.voto).then(
         resp => {
