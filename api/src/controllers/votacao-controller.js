@@ -29,9 +29,13 @@ exports.createVotacao = (req, res) => {
 
     participantesString += ']';
 
-    votacaoNet.createVotacao(body.nome, opcoesString, participantesString, body.startDate, body.endDate);
-    
-    res.send("Ta suave");
+    votacaoNet.createVotacao(body.nome, opcoesString, participantesString, body.startDate, body.endDate).then(
+        resp => {
+            res.status(200).send("Votacao criada com sucesso!!");
+        }, err => {
+            res.status(400).send(err);
+        }
+    );
 };
 
 exports.readVotacao = (req, res) => {};

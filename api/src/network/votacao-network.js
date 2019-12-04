@@ -44,6 +44,7 @@ exports.createVotacao = async (nome, opcoes, participantes, startDate, endDate) 
 
     } catch (error) {
         console.error(`Failed to submit transaction: ${error}`);
-        process.exit(1);
+        throw error;
+        // process.exit(1);
     }
 }
