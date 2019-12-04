@@ -5,30 +5,11 @@
     </div>
   </div>
 </div>
-
-
 <h5>Preencha os campos a seguir com os dados necessários para a votação:</h5>
-
 <div class="container">
-  <!-- <form class="example-form">
-                    <mat-form-field class="example-full-width">
-                      <input matInput placeholder="Nome da Votação">
-                    </mat-form-field>
-            </form>
-            <form class="example-form">
-                    <mat-form-field class="example-full-width">
-                      <input matInput placeholder="CPF dos Votantes">
-                    </mat-form-field>
-            </form>
-            <form class="example-form">
-                    <mat-form-field class="example-full-width">
-                        <input matInput placeholder="Opções de Voto">
-                    </mat-form-field>
-            </form>
- -->
-  <form class="example-form">
+  <form class="example-form" [formGroup]="basicForm">
     <mat-form-field class="example-full-width">
-      <input matInput placeholder="Nome da Votação">
+      <input matInput placeholder="Nome da Votação" formControlName="nome">
     </mat-form-field>
   </form>
   <form class="example-form" [formGroup]="basicForm">
@@ -42,9 +23,7 @@
   </p>
   </div>
   <div class="example-button-row">
-    <!-- <a href="/paguser"> -->
       <button mat-raised-button color="warn" (click)="inputOption1()">Adicionar Opção de Voto</button>
-    <!-- </a> -->
   </div> 
   <div class="container">
   <form class="example-form" [formGroup]="basicForm">
@@ -60,13 +39,11 @@
 
 <br>
 <div class="example-button-row">
-  <!-- <a href="/paguser"> -->
     <button mat-raised-button color="warn" (click)="inputOption2()">Adicionar Votante</button>
-  <!-- </a> -->
 </div> 
 <hr>
 <div class="example-button-row">
-  <a href="/pagcriar2">
-    <button mat-raised-button color="warn">Avançar</button>
-  </a>
+  <!-- <a href="/pagcriar2"> -->
+    <button mat-raised-button color="warn" (click)="avanca()">Avançar</button>
+  <!-- </a> -->
 </div> 

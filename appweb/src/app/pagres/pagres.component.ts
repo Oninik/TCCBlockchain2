@@ -22,7 +22,7 @@ export class PagresComponent implements OnInit {
     }
   };
 
-  public barChartLabels: Label[] = ['Opção de Voto 1', 'Opção de Voto 2', 'Opção de Voto 3', 'Opção de Voto 4', 'Opção de Voto 5'];
+  public barChartLabels: Label[] = [];
   public barChartType: ChartType = 'bar';
   public barChartLegend = true;
   public barChartPlugins = [pluginDataLabels];
@@ -32,7 +32,19 @@ export class PagresComponent implements OnInit {
     { data: [2, 1, 3, 0, 5], label: 'Teste1' }
   ];
 
-  constructor() { }
+  private tmpData;
+
+  constructor() { 
+    this.tmpData = JSON.parse(localStorage.getItem('tempResultado'));
+    this.barChartLabels = this.tmpData.opcoes;
+    this.barChartData = [
+      {
+        data: this.tmpData.votos,
+        label: this.tmpData.nome
+      }
+    ]
+    console.log(this.tmpData)
+  }
 
   ngOnInit() {
   }

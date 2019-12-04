@@ -11,20 +11,19 @@
 
 
 <div class="container">
-<form class="example-form">
+<form class="example-form" [formGroup]="basicForm">
     <mat-form-field class="example-full-width">
-        <input matInput placeholder="Data do Inicio">
+        <input matInput placeholder="Data do Inicio" formControlName="dataInicio">
     </mat-form-field>
-</form>
-<form class="example-form">
+    <br>
     <mat-form-field class="example-full-width">
-        <input matInput placeholder="Data do Fim">
+        <input matInput placeholder="Data do Fim" formControlName="dataFim">
     </mat-form-field>
 </form> 
 </div>
 
 <div class="example-button-row">
-    <a href="/#">
-      <button mat-raised-button color="warn">Criar Votação</button>
-    </a>
+    <!-- <a href="/#"> -->
+      <button mat-raised-button color="warn" (click)="enviarVotacao()">Criar Votação</button>
+    <!-- </a> -->
   </div> 

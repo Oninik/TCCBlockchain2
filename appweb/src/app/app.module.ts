@@ -4,6 +4,7 @@ import {MatInputModule} from '@angular/material/input';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material/button';
 import { Routes, RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 import { ChartsModule } from 'node_modules/ng2-charts';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -21,22 +22,6 @@ import { PagselvotComponent } from './pagmod/pagselvot/pagselvot.component';
 import { PagselmodComponent } from './pagmod/pagselmod/pagselmod.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Pagcriar2Component } from './pagcriar/pagcriar2/pagcriar2.component';
-
-
-
-const AppRoutes: Routes = [
-  {path: '', component: MenuiniComponent},
-  {path: 'paglog', component: PaglogComponent},
-  {path: 'pagreg', component: PagregComponent},
-  {path: 'pagcriar', component: PagcriarComponent},
-  {path: 'pagmod', component: PagmodComponent},
-  {path: 'paguser', component: PaguserComponent},
-  {path: 'pagvot', component: PagvotComponent},
-  {path: 'pagres', component: PagresComponent},
-  {path: 'pagapu', component: PagapuComponent},
-  {path: 'pagcriar2', component: Pagcriar2Component}
-
-];
 
 @NgModule({
   declarations: [
@@ -56,14 +41,14 @@ const AppRoutes: Routes = [
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
     MatInputModule,
     ChartsModule,
-    MatButtonModule,
-    RouterModule.forRoot(AppRoutes)
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

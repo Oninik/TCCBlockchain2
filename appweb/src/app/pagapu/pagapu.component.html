@@ -1,24 +1,20 @@
 <div class="container">
-        <div class="row">
-                <div class="col-xs-12">
-                    <h1>Página de Apuração</h1>
-                </div>    
-        </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <h1>Página de Apuração</h1>
     </div>
-    
-    
-    <h5>Digiteo nome da votação que deseja apurar:</h5>
-    <div class="container">
-            <form class="example-form">
-                    <mat-form-field class="example-full-width">
-                      <input matInput placeholder="Votação">
-                    </mat-form-field>
-                  </form>
-    </div>
-    
-    <div class="example-button-row">
-      <a href="/pagres">
-        <button mat-raised-button color="warn">Apurar</button>
-      </a>
-    </div>
-    
+  </div>
+</div>
+<h5>Digiteo nome da votação que deseja apurar:</h5>
+<div class="container">
+  <form class="example-form" [formGroup]="basicForm">
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Votação" formControlName="nome">
+    </mat-form-field>
+  </form>
+</div>
+<div class="example-button-row">
+  <!-- <a routerLink="/pagres"> -->
+    <button mat-raised-button color="warn" (click)="consultar()">Apurar</button>
+  <!-- </a> -->
+</div>

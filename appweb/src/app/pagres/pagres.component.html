@@ -1,20 +1,14 @@
 <div>
-        <div>
-          <div style="display: block">
-            <canvas baseChart
-              [datasets]="barChartData"
-              [labels]="barChartLabels"
-              [options]="barChartOptions"
-              [plugins]="barChartPlugins"
-              [legend]="barChartLegend"
-              [chartType]="barChartType">
-            </canvas>
-          </div>
-          <div class="container">
-                <a href="paguser">
-                        <button mat-button mat-raised-button color="warn">Voltar para a Página de Usuário</button>
-                      </a>
-          </div>
-          
-        </div>
-      </div>
+  <div>
+    <div style="display: block">
+      <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions"
+        [plugins]="barChartPlugins" [legend]="barChartLegend" [chartType]="barChartType">
+      </canvas>
+    </div>
+    <div class="container">
+      <a routerLink="/paguser">
+        <button mat-button mat-raised-button color="warn">Voltar para a Página de Usuário</button>
+      </a>
+    </div>
+  </div>
+</div>
