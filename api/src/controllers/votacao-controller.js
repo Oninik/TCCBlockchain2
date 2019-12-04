@@ -31,7 +31,7 @@ exports.createVotacao = (req, res) => {
 
     votacaoNet.createVotacao(body.nome, opcoesString, participantesString, body.startDate, body.endDate).then(
         resp => {
-            res.status(200).send("Votacao criada com sucesso!!");
+            res.status(200).send(resp);
         }, err => {
             res.status(400).send(err);
         }
@@ -53,36 +53,13 @@ exports.readVotacao = (req, res) => {
 
 exports.adicionarOpcao = (req, res) => {
     
+      
     let body = req.body;
+    console.log("Eae deu certo?");
 
-    let opcoes = body.opcoes;
-
-    let opcoesString = "[";
-
-    opcoes.forEach(function (item, indice) {
-        opcoesString += '\"' + item + '\"';
-        if(indice+1 < opcoes.length){
-            opcoesString += ','
-        }
-    });
-
-    opcoesString += ']';
-
-    let participantes = body.participantes;
-    let participantesString = "[";
-
-    participantes.forEach(function (item, indice) {
-        participantesString += '\"' + item + '\"';
-        if(indice+1 < opcoes.length){
-            participantesString += ','
-        }
-    });
-
-    participantesString += ']';
-
-    votacaoNet.createVotacao(body.nome, opcoesString, participantesString, body.startDate, body.endDate).then(
+    votacaoNet.Votar(body.nome, body.newopcao).then(
         resp => {
-            res.status(200).send("Votacao criada com sucesso!!");
+            res.status(200).send("Alteração realizada com sucesso!!");
         }, err => {
             res.status(400).send(err);
         }
@@ -104,7 +81,7 @@ exports.Votar = (req, res) => {
 
     votacaoNet.Votar(body.nome, body.cpf, body.voto).then(
         resp => {
-            res.status(200).send("Voto realizado com sucesso!!");
+            res.status(200).send(resp);
         }, err => {
             res.status(400).send(err);
         }
@@ -112,3 +89,7 @@ exports.Votar = (req, res) => {
 };
 
 exports.criarVotante = (req, res) => {};
+
+
+
+// async adicionarOpcao(ctx, nome, newopcoes)
