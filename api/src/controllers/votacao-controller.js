@@ -43,7 +43,7 @@ exports.readVotacao = (req, res) => {
 
     votacaoNet.readVotacao(query.nomeVotacao).then(
         resp => {
-            res.status(200).send(resp);
+            res.json(resp);
         }, err => {
             res.status(400).send(err);
         }
