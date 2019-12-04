@@ -1,0 +1,9 @@
+{
+  "connection_file": "ibpConnection.json",
+  "appAdmin": "adminapp",
+  "appAdminSecret": "adminpw",
+  "orgMSPID": "votantemsp",
+  "caName": "https://173.193.82.253:31860",
+  "userName": "V1",
+  "gatewayDiscovery": { "enabled": true, "asLocalhost": false }
+}
