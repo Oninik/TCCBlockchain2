@@ -38,7 +38,17 @@ exports.createVotacao = (req, res) => {
     );
 };
 
-exports.readVotacao = (req, res) => {};
+exports.readVotacao = (req, res) => {
+    let query = req.query;
+
+    votacaoNet.readVotacao(query.nomeVotacao).then(
+        resp => {
+            res.status(200).send(resp);
+        }, err => {
+            res.status(400).send(err);
+        }
+    );
+};
 
 exports.adicionarOpcao = (req, res) => {};
 
