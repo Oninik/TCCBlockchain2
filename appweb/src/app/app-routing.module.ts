@@ -10,6 +10,7 @@ import { PagvotComponent } from './pagvot/pagvot.component';
 import { PagresComponent } from './pagres/pagres.component';
 import { PagapuComponent } from './pagapu/pagapu.component';
 import { Pagcriar2Component } from './pagcriar/pagcriar2/pagcriar2.component';
+import { PagadopComponent } from './pagadop/pagadop.component';
 
 const routes: Routes = [
   {path: '', component: MenuiniComponent},
@@ -21,7 +22,8 @@ const routes: Routes = [
   {path: 'pagvot', component: PagvotComponent},
   {path: 'pagres', component: PagresComponent},
   {path: 'pagapu', component: PagapuComponent},
-  {path: 'pagcriar2', component: Pagcriar2Component}
+  {path: 'pagcriar2', component: Pagcriar2Component},
+  {path: 'pagadop', component: PagadopComponent}
 
 ];
 

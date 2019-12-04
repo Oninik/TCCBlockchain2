@@ -24,4 +24,11 @@ export class VotacaoService {
     let url = environment.apiBaseURL + '/votar';
     return this.http.post(url,voto);
   }
+
+  public adicionarOpcao(voto): Observable<any> {
+    let url = environment.apiBaseURL + '/adop';
+    return this.http.post(url,voto);
+  }
+
+
 }

@@ -22,6 +22,7 @@ import { PagselvotComponent } from './pagmod/pagselvot/pagselvot.component';
 import { PagselmodComponent } from './pagmod/pagselmod/pagselmod.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Pagcriar2Component } from './pagcriar/pagcriar2/pagcriar2.component';
+import { PagadopComponent } from './pagadop/pagadop.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { Pagcriar2Component } from './pagcriar/pagcriar2/pagcriar2.component';
     PagresComponent,
     PagselvotComponent,
     PagselmodComponent,
-    Pagcriar2Component
+    Pagcriar2Component,
+    PagadopComponent
   ],
   imports: [
     BrowserModule,
