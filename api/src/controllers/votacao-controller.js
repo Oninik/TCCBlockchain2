@@ -43,6 +43,7 @@ exports.readVotacao = (req, res) => {
 
     votacaoNet.readVotacao(query.nomeVotacao).then(
         resp => {
+            res.setHeader('Content-Type', 'application/json');
             res.send(resp);
         }, err => {
             res.status(400).send(err);
