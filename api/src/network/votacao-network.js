@@ -154,7 +154,7 @@ exports.adicionarOpcao = async (nome, newopcao) => {
         const contract = network.getContract('fabcar');
 
         // Submit the specified transaction.
-        await contract.submitTransaction("adicionarOpcao", nome, newopcao);
+        await contract.submitTransaction("retirarOpcao", nome, newopcao);
         console.log('Transaction has been submitted');
 
         // Disconnect from the gateway.
