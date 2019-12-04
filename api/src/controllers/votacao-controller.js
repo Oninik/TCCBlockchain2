@@ -57,7 +57,7 @@ exports.adicionarOpcao = (req, res) => {
     let body = req.body;
     console.log("Eae deu certo?");
 
-    votacaoNet.Votar(body.nome, body.newopcao).then(
+    votacaoNet.adicionarOpcao(body.nome, body.newopcao).then(
         resp => {
             res.status(200).send("Alteração realizada com sucesso!!");
         }, err => {
