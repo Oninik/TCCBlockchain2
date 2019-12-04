@@ -14,7 +14,7 @@ export class Pagcriar2Component implements OnInit {
 
   basicForm: FormGroup;
 
-  constructor(private builder: FormBuilder, private votacao: VotacaoService, private route: Router) { 
+  constructor(private builder: FormBuilder, private votacao: VotacaoService, private route: Router) {
     this.basicForm = this.builder.group({
       dataInicio: ['', Validators.required],
       dataFim: ['', Validators.required]
@@ -26,11 +26,11 @@ export class Pagcriar2Component implements OnInit {
   }
 
   enviarVotacao() {
+    // tslint:disable-next-line: prefer-const
     let newTmpObj = { ...this.tmpObj,
       startDate: this.basicForm.getRawValue().dataInicio,
       endDate: this.basicForm.getRawValue().dataFim
-    }
-
+    };
     this.votacao.createVotacao(newTmpObj).subscribe(
       resp => {
         console.log(resp);
@@ -38,7 +38,7 @@ export class Pagcriar2Component implements OnInit {
       }, err => {
         console.log(err);
       }
-    ); 
+    );
 
   }
 }
